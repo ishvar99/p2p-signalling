@@ -1,0 +1,24 @@
+{
+  "name": "p2p-peerjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "peer": "^0.5.3",
+    "socket.io": "^2.3.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "client": "node app.js",
+    "server": "node server.js",
+    "peer": "node peer.js",
+    "start":"concurrently \"npm run client\" \"npm run server\" \"npm run peer\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
