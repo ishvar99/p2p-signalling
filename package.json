@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "client": "node app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
