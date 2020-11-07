@@ -9,6 +9,7 @@ let para =document.getElementById('para')
 let peer = new Peer(undefined,{
   host:'/',
   port:PORT||'3000',
+  secure:true,
 path:'/peerjs',
 debug:2
 }); 

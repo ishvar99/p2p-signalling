@@ -2,6 +2,7 @@
 let peer = new Peer('setter',{
  host:'/',
  port:PORT||'3000',
+ secure:true,
  path:'/peerjs',
  debug:2
 });
