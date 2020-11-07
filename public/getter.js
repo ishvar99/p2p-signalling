@@ -5,7 +5,6 @@ let inputField=document.getElementById('text')
 let list=document.getElementById('msg-list');
 let element=document.getElementById('element');
 let para =document.getElementById('para')
-console.log(`PORT ${PORT}`)
 let peer = new Peer(undefined,{
   host:location.hostname,
   port: location.port || (location.protocol === 'https:' ? 443 : 80),

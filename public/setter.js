@@ -1,4 +1,3 @@
-console.log(`PORT ${PORT}`)
 let peer = new Peer('setter',{
  host:location.hostname,
  port:location.port || (location.protocol === 'https:' ? 443 : 80),

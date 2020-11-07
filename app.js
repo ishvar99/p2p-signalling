@@ -3,7 +3,7 @@ var app=express()
 var server = require('http').createServer(app);
 var path=require('path');
 const ExpressPeerServer = require('peer').ExpressPeerServer;
-var peerserver = ExpressPeerServer(server);
+var peerserver = ExpressPeerServer(server,{debug:true});
 app.use(express.static(__dirname + '/' ));
 app.use('/peerjs', peerserver);
 //peer
@@ -15,8 +15,8 @@ app.get('/setter', (req, res) => {
   res.sendFile('setter.html',{  root: path.join(__dirname,'/public')});
 });
 
-server.listen(process.env.PORT, () => {
-  console.log('Server listening on PORT 3000');
+server.listen(process.env.PORT||3000, () => {
+  console.log('Server is up and running!');
 });
 
 
