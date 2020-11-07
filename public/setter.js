@@ -1,4 +1,4 @@
-
+console.log(`PORT ${PORT}`)
 let peer = new Peer('setter',{
  host:'/',
  port:PORT||'3000',

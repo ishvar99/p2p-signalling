@@ -5,7 +5,7 @@ let inputField=document.getElementById('text')
 let list=document.getElementById('msg-list');
 let element=document.getElementById('element');
 let para =document.getElementById('para')
-
+console.log(`PORT ${PORT}`)
 let peer = new Peer(undefined,{
   host:'/',
   port:PORT||'3000',
