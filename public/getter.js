@@ -5,9 +5,10 @@ let inputField=document.getElementById('text')
 let list=document.getElementById('msg-list');
 let element=document.getElementById('element');
 let para =document.getElementById('para')
+
 let peer = new Peer(undefined,{
   host:'/',
-  port:process.env.PORT||'3000',
+  port:PORT||'3000',
 path:'/peerjs',
 debug:2
 }); 
