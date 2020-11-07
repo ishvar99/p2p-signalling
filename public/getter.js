@@ -3,9 +3,13 @@ let form =document.getElementById('connect');
 let form2 =document.getElementById('chat')
 let inputField=document.getElementById('text')
 let list=document.getElementById('msg-list');
+let element=document.getElementById('element');
+let para =document.getElementById('para')
 let peer = new Peer(undefined,{
   host:'/',
-  port:'4000'
+  port:'3000',
+path:'/peerjs',
+debug:2
 }); 
 let conn=null;
  peer.on('open', function(id) {
@@ -16,29 +20,28 @@ let conn=null;
 form.addEventListener('submit',(e)=>{
   e.preventDefault();
   const id = peerId.value;
-  conn = peer.connect(id);
+  conn = peer.connect(id,{reliable:true});
   
   conn.on('open', () => {
     form.style.display='none';
     form2.style.visibility='visible'
+    para.style.visibility='visible';
       console.log('connected to peer', id);
   });
 })
 peer.on('connection', (conn) => {
+  // console.log('connection');
+  // console.log(conn);
   conn.on('data', displayMessage);
  });
 
 form2.addEventListener('submit',(e)=>{
   e.preventDefault();
   conn.send(inputField.value);
-  var li =document.createElement('li');
-  li.textContent=inputField.value;
-  list.appendChild(li);
   inputField.value="";
 })
  
 var displayMessage=(message)=>{
-  var li =document.createElement('li')
-  li.textContent=message;
-  list.appendChild(li);
+  console.log(message);
+  element.textContent=message;
 }

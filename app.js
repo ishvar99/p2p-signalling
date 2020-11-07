@@ -1,13 +1,23 @@
 var express = require('express')
+var app=express()
+var server = require('http').createServer(app);
 var path=require('path');
+const ExpressPeerServer = require('peer').ExpressPeerServer;
+var peerserver = ExpressPeerServer(server);
 
-var app=express();
-app.use(express.static("public"))
+app.use(express.static(__dirname + '/' ));
+app.use('/peerjs', peerserver);
+//peer
 app.get('/', (req, res) => {
-  res.sendFile('client.html',{  root: path.join(__dirname,'/public')});
+  res.sendFile('getter.html',{  root: path.join(__dirname,'/public')});
 });
-app.listen(3000, () => {
-  console.log('listening on PORT 3000');
+// server
+app.get('/setter', (req, res) => {
+  res.sendFile('setter.html',{  root: path.join(__dirname,'/public')});
+});
+
+server.listen(3000, () => {
+  console.log('Server listening on PORT 3000');
 });
 
 

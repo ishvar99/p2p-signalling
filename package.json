@@ -13,10 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "client": "node app.js",
-    "server": "node server.js",
-    "peer": "node peer.js",
-    "start":"concurrently \"npm run client\" \"npm run server\" \"npm run peer\""
+    "client": "node app.js"
   },
   "keywords": [],
   "author": "",
