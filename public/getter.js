@@ -7,9 +7,8 @@ let element=document.getElementById('element');
 let para =document.getElementById('para')
 console.log(`PORT ${PORT}`)
 let peer = new Peer(undefined,{
-  host:'https://stark-shore-27629.herokuapp.com',
-  port:443,
-  secure:true,
+  host:location.hostname,
+  port: location.port || (location.protocol === 'https:' ? 443 : 80),
 path:'/peerjs',
 debug:2
 }); 
