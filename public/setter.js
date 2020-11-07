@@ -1,6 +1,6 @@
 console.log(`PORT ${PORT}`)
 let peer = new Peer('setter',{
- host:'/',
+ host:'https://stark-shore-27629.herokuapp.com',
  port:PORT||'3000',
  secure:true,
  path:'/peerjs',
