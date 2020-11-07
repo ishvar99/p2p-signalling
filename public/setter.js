@@ -1,7 +1,7 @@
 
 let peer = new Peer('setter',{
  host:'/',
- port:'3000',
+ port:process.env.PORT||'3000',
  path:'/peerjs',
  debug:2
 });

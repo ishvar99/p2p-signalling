@@ -7,7 +7,7 @@ let element=document.getElementById('element');
 let para =document.getElementById('para')
 let peer = new Peer(undefined,{
   host:'/',
-  port:'3000',
+  port:process.env.PORT||'3000',
 path:'/peerjs',
 debug:2
 }); 

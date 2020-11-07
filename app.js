@@ -16,7 +16,7 @@ app.get('/setter', (req, res) => {
   res.sendFile('setter.html',{  root: path.join(__dirname,'/public')});
 });
 
-server.listen(3000, () => {
+server.listen(process.env.PORT||3000, () => {
   console.log('Server listening on PORT 3000');
 });
 
