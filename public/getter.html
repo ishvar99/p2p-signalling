@@ -6,14 +6,31 @@
  <title>WEBRTC</title>
 </head>
 <body>
- <h3 class="userId">Getter: </h3>
- <form id="connect">
+ <form id="account">
+  <label>Enter your account number</label>
+  <input type="text" id='accno'>
+  <input type="submit">
+ </form>
+ <h3 style="visibility: hidden;" class="userId">Hello, </h3>
+ <div style="visibility: hidden;" id='services'>
+  <h3>Services</h3>
+  <form id="service-form">
+   <input type="radio" id="withdraw" checked name="service" value="withdraw">
+<label>Withdraw</label>
+<input type="radio" id="deposit" name="service" value="deposit">
+<label>Deposit</label><br>
+<br>
+<input type="submit" value="next">
+  </form>
+ </div>
+  
+ <form id="connect" style="visibility: hidden;">
   <label>Enter the peer Id</label>
   <input type="text" name="peerId" id="peerId">
   <input type="submit">
  </form>
  <form id="chat" style="visibility: hidden;">
-  <label>Enter Text</label>
+  <label>Enter Amount</label>
   <input autocomplete="off" type="text" name="text" id="text">
   <input type="submit">
  </form>
@@ -23,6 +40,5 @@
 </body>
 
 <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
-
-<script src="./public/getter.js"></script>
+<script src="./getter.js"></script>
 </html>
