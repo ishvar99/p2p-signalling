@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
   res.sendFile('getter.html',{  root: path.join(__dirname,'/public')});
 });
 // server
-app.get('/setter', (req, res) => {
-  res.sendFile('setter.html',{  root: path.join(__dirname,'/public')});
+app.get('/cashier', (req, res) => {
+  res.sendFile('cashier.html',{  root: path.join(__dirname,'/public')});
 });
 
 server.listen(process.env.PORT||3000, () => {

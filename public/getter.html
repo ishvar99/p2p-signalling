@@ -3,10 +3,81 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
  <title>WEBRTC</title>
 </head>
 <body>
- <form id="account">
+  <div class="container my-4">
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            1. Personal Details
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form id="personal-data">
+            <div class="form-group">
+              <label for="accountNumber">Account Number</label>
+              <input onkeyup="checkPersonalForm()" type="text" class="form-control personal-data-field" name="acc-holder" id="accno" placeholder="Enter account number">
+            </div>
+            <div class="form-group">
+              <label for="accountHolder">Account Holder's Name</label>
+              <input onkeyup="checkPersonalForm()" type="text" class="form-control personal-data-field" id="accname" name="acc-holder-name" placeholder="Account Holder Name">
+            </div>
+            <button id="personal-data-button" disabled type="submit" class="btn btn-primary">Next</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2. Bank Visit
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <button type="button" id="fetch-services" class="btn btn-primary my-4">Fetch Services</button>
+          <br>
+          <div class="spinner-border" style="display: none;" id="loader" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div id="services" style="display: none;">
+            <h4>Services</h4>
+            <form id="service-form">
+          
+             </form>
+             <form id="service-details-form"> 
+              <label>
+                Service Details
+              </label>
+              <input onkeyup="checkServiceForm(this)" type="text" name="service-details" id="service-details">
+              
+              <input disabled class="btn btn-primary" type="submit" value="Add" id="service-details-button"></input>
+            </form>
+            <hr></hr>
+            <div>
+              <label>
+                Transaction Note
+              </label>
+              <input type="text" name="transaction-note" id="transaction-note">
+            </div>
+          </div>
+          <br>
+          <button style="display: none;" class="btn btn-primary" id="submit-transaction">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+ <!-- <form id="account">
   <label>Enter your account number</label>
   <input type="text" id='accno'>
   <input type="submit">
@@ -36,9 +107,11 @@
  </form>
  <p id='para' style="visibility: hidden;">Response from Setter :<span id='element'></span></p>
   
- </div>
+ </div> -->
 </body>
 
-<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+<script src="./peer.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="./getter.js"></script>
 </html>
